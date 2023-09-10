@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>400</y>
+      <w>136</w>
+      <h>412</h>
+    </coordinates>
+    <panel_attributes>MainPanel
+--
+_+ isInGamePlay: boolean_
+_+ gameOver: boolean_
+isPause: boolean
+intro: Timer
+_duration: int_
+count: int
++ stateDog: boolean
++ dogDoorEntered: boolean
+timerMain: Timer
+randomDog: Random
+randomBone: Random
+_+ WIDTH: int_
+_+ HEIGHT: int_
++ grass: Image
+dog: Image
+dogWidth: int
+dogHeight: int
+xDog: int
+yDog: int
++ dogVelo: int
+xVelo: int
+yVelo: int
+bone: Image
++ boneWidth: int
++ boneHeight: int
++ xBone: int
++ yBone: int
++ houseWidth: int
++ houseHeight: int
++ doorWidth: int
++ doorHeight: int
++ doorX: int
++ doorY: int
+doorEntered: boolean
+_+ score: int_
+_+ life: int_
+- delay: int
++ gameOverPanel: GameOverPanel
++ colorBackground: Color
+--
++ MainPanel()
+# paintComponent(g: Graphics): void
++ gameStart(): void
++ gameStop(): void
++ gameOver(): void
++ gameReset(): void
++ drawDog(g: Graphics): void
++ drawOpenDoor(g: Graphics): void
++ drawDogOpenDoor(g: Graphics): void
++ drawHouse(g: Graphics): void
++ drawDogHouse(g: Graphics): void
++ drawBone(g: Graphics): void
++ newBone(): void
++ actionPerformed(e: ActionEvent): void
++ checkCollision(): void
++ checkLife(): void
++ mouseClicked(e: MouseEvent): void
++ mousePressed(e: MouseEvent): void
++ mouseReleased(e: MouseEvent): void
++ mouseEntered(e: MouseEvent): void
++ mouseExited(e: MouseEvent): void
++ mouseDragged(e: MouseEvent): void
++ mouseMoved(e: MouseEvent): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>212</y>
+      <w>104</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>StartPanel
+--
+label: JLabel
+timer: Timer
+background: Image
+dog: Image
+dogX: int
+dogY: int
+jump: int
+bone: Image
+boneX: int
+boneY: int
+start: JButton
+quit: JButton
+gameFrame: JFrame
+up: boolean
+- delay: int
+select: SelectingPanel
+--
++ StartPanel(title: String)
+# paintComponent(g: Graphics): void
++ actionPerformed(e: ActionEvent): void
+_+ main(args: String[]): void_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>172</x>
+      <y>536</y>
+      <w>104</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>MainHard
+--
+dog2: Image
+dogWidth2: int
+dogHeight2: int
+xDog2: int
+yDog2: int
+dogVelo2: int
+xVelo2: int
+yVelo2: int
+stateDog2: boolean
+randomDog2: Random
+randomColor: Random
+--
++ MainHard()
+# paintComponent(g: Graphics): void
++ drawDog(g: Graphics): void
++ checkCollision(): void
++ actionPerformed(e: ActionEvent): void
++ drawDogHouse(g: Graphics): void
++ gameReset(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>400</y>
+      <w>164</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>ScorePanel
+--
+timerScore: Timer
+- delay: int
+minutes: int
+seconds: int
+milliseconds: int
+time: String
++ bar: JProgressBar
++ colorArea: Color
++ colorBorder: Color
++ colorString: Color
+--
++ ScorePanel():
+# paintComponent(g: Graphics): void
++ drawScore(g: Graphics): void
++ drawLife(): void
++ drawTime(g: Graphics): void
++ actionPerformed(e: ActionEvent): void
++ gameStart(): void
++ gameStop(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>244</y>
+      <w>104</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>SelectingPanel
+--
+background: Image
+_menu: JComboBox_
+levels: String[]
+selectLevel: JLabel
+select: JLabel
+output: JLabel
+yes: JButton
+no: JButton
+sure: JLabel
+--
++ SelectingPanel()
+# paintComponent(g: Graphics): void
++ actionPerformed(e: ActionEvent): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>536</y>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>HardLevel
+--
+scorePanel: ScorePanel
+mainPanel: MainPanel
+menuPanel: PausedMenuPanel
+gamePanel: JPanel
+openMenu: boolean
+--
++ HardLevel(title: String)
++ actionPerformed(e: ActionEvent): void
++ keyTyped(e: KeyEvent): void
++ keyPressed(e: KeyEvent): void
++ keyReleased(e: KeyEvent): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>572</y>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>NormalLevel
+--
+scorePanel: ScorePanel
+mainPanel: MainPanel
+menuPanel: PausedMenuPanel
+gamePanel: JPanel
+openMenu: boolean
+--
++ NormalLevel(title: String)
++ actionPerformed(e: ActionEvent): void
++ keyTyped(e: KeyEvent): void
++ keyPressed(e: KeyEvent): void
++ keyReleased(e: KeyEvent): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>704</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>PausedMenuPanel
+--
++ resumeButton: JButton
++ quitButton: JButton
++ restartButton: JButton
+label: JLabel
+menubackground: Image
+--
++ PausedMenuPanel()
+# paintComponent(g: Graphics): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>412</y>
+      <w>76</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>GameOverPanel
+--
+gameOver: JLabel
+again: JLabel
++ yes: JButton
++ no: JButton
+--
++ GameOverPanel()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>640</y>
+      <w>88</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>ScoreHard
+--
+
+--
++ ScoreHard()
++ drawLife(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>772</x>
+      <y>120</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ActionListener
+--
+...
+--
+/+ actionPerformed(e: ActionEvent): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>80</y>
+      <w>88</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>JPanel
+--
+...
+--
++ JPanel()
++ JPanel(layout: LayoutManager)
+...
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>932</x>
+      <y>228</y>
+      <w>108</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+KeyListener
+--
+...
+--
+/+ keyTyped(e: KeyEvent): void/
+/+ keyPressed(e: KeyEvent): void/
+/+ keyReleased(e: KeyEvent): void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>120</y>
+      <w>108</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MouseListener
+--
+...
+--
+/+ mouseClicked(e: MouseEvent): void/
+/+ mousePressed(e: MouseEvent): void/
+/+ mouseReleased(e: MouseEvent): void /
+/+ mouseEntered(e: MouseEvent): void/
+/+ mouseExited(e: MouseEvent): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>776</x>
+      <y>228</y>
+      <w>108</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MouseMotionListener
+--
+...
+--
+/+ mouseDragged(e: MouseEvent): void/
+/+ mouseMoved(e: MouseEvent): void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>140</x>
+      <y>172</y>
+      <w>276</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>startGame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>452</x>
+      <y>44</y>
+      <w>228</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>javax.swing</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>752</x>
+      <y>92</y>
+      <w>316</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>java.awt.event</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>80</y>
+      <w>88</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>JFrame
+--
+...
+--
++ JFrame()
++ JFrame(title: String)
+...
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>560</x>
+      <y>340</y>
+      <w>500</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>normalLevel</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>504</y>
+      <w>300</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>hardLevel</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>120</y>
+      <w>292</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>710.0;10.0;710.0;170.0;10.0;170.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>152</y>
+      <w>584</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>1440.0;10.0;1440.0;100.0;10.0;110.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>120</y>
+      <w>172</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;10.0;410.0;220.0;10.0;220.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>152</y>
+      <w>468</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>1150.0;10.0;1150.0;120.0;750.0;120.0;750.0;170.0;10.0;170.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>120</y>
+      <w>476</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;300.0;590.0;300.0;590.0;490.0;1170.0;490.0;1170.0;730.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>120</y>
+      <w>136</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;350.0;320.0;350.0;320.0;700.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>152</y>
+      <w>172</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>410.0;10.0;410.0;140.0;10.0;140.0;10.0;620.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>804</x>
+      <y>176</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>400.0;10.0;400.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>268</y>
+      <w>164</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>390.0;10.0;390.0;60.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>120</y>
+      <w>300</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;650.0;730.0;650.0;730.0;700.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>152</y>
+      <w>104</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;240.0;110.0;240.0;330.0;20.0;330.0;20.0;620.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>592</x>
+      <y>52</y>
+      <w>512</w>
+      <h>528</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;300.0;280.0;300.0;280.0;10.0;1250.0;10.0;1260.0;1220.0;530.0;1220.0;530.0;1300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>88</y>
+      <w>268</w>
+      <h>492</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>20.0;170.0;20.0;200.0;190.0;200.0;190.0;10.0;650.0;10.0;640.0;1170.0;10.0;1170.0;10.0;1210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>272</y>
+      <w>108</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;250.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>120</y>
+      <w>388</w>
+      <h>760</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1880.0;950.0;1880.0;950.0;1390.0;720.0;1390.0;720.0;1460.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>64</x>
+      <y>20</y>
+      <w>528</w>
+      <h>524</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1300.0;260.0;1300.0;350.0;1240.0;350.0;1240.0;10.0;20.0;10.0;10.0;1290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>80</x>
+      <y>0</y>
+      <w>704</w>
+      <h>544</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>1740.0;390.0;1740.0;430.0;1650.0;430.0;1650.0;10.0;30.0;10.0;10.0;1340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>0</y>
+      <w>328</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>670.0;690.0;670.0;780.0;790.0;780.0;800.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>492</y>
+      <w>432</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1060.0;800.0;1060.0;840.0;380.0;840.0;380.0;10.0;10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>52</x>
+      <y>528</y>
+      <w>748</w>
+      <h>404</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1850.0;10.0;1850.0;80.0;1710.0;80.0;1710.0;990.0;200.0;980.0;200.0;240.0;10.0;240.0;10.0;280.0</additional_attributes>
+  </element>
+</diagram>
